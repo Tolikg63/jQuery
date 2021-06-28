@@ -41,22 +41,10 @@ function $(element){
          let elements = document.querySelectorAll(element);
          let arr;
          elements.forEach(item => {
-            arr = item.children;
+            arr = item.contentDocument.querySelectorAll(elStr);
          });
-         for (let i = 0; i < arr.length; i++) {
-            // console.log(arr[i]);
-            if (arr[i] === elStr) {
-               return arr[i];
-            }
-         }
-         //todo for (let i = 0; i < elements.length; i++) {
-         //todo    arr = (elements[i].children);
-         //todo }     
-         // return arr;
-         // elements.forEach(item => {
-         //    return item.children;
-         // });
-         // return element.children;
+         return arr;
+         
       },
       eq: function(ind) {
          let elements = document.querySelectorAll(element);
@@ -73,6 +61,35 @@ function $(element){
             arr.push(item);
          });
          return arr;
+      },
+      next: function() {
+         let elements = document.querySelectorAll(element);
+         let next;
+         elements.forEach(item => {
+            next = item.nextElementSibling;
+         });
+         return next;
+      },
+      prev: function() {
+         let elements = document.querySelectorAll(element);
+         let prev;
+         elements.forEach(item => {
+            prev = item.previousElementSibling;
+         });
+         return prev;
+      },
+      nextAll: function() {
+         let elements = document.querySelectorAll(element);
+         let nextAll = [];
+         elements.forEach(item => {
+            nextAll.push()
+         });
+      },
+      remove: function(el) {
+         let elements = document.querySelectorAll(element);
+         elements.forEach(item => {
+            item.removeChild(el);
+         });
       }
    }    
 }
@@ -85,6 +102,9 @@ function $(element){
 //! .hide(),
 //? find(),
 //! eq(),
+//! next()
+//! prev()
+//? nextAll()
 
 //? .css(),
 
@@ -93,12 +113,5 @@ find, eq, parent, parents, next, prev, nextAll,
 prevAll, remove, empty 
 
 append, prepend, after, before
-
-
-
-
-
-
-
-
+\
 */

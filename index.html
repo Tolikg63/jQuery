@@ -11,8 +11,8 @@
    <button id="btn">Click</button>
    <input type="text" class="inp">
    <div class="cont">
-      <div>1</div>
-      <div>2</div>
+      <div class="first">1</div>
+      <div class="second">2</div>
       <div>3</div>
       <div>4</div>
       <div>5</div>
@@ -42,8 +42,10 @@
 
       */
 
-      
-      console.log($('.cont').parent());
+      // console.log($('.cont').find('div'));
+      // console.log($('.cont').parent());
+      // console.log($('.second').prev());
+      $('.cont').remove('.second')
 
    </script>
 </body>
